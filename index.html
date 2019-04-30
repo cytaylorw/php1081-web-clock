@@ -104,11 +104,17 @@
         const second = document.getElementById("second");
         const digit = document.getElementById("digit");
         updateTime();
-        let ms = new Date().getMilliseconds();
+         let ms = new Date().getMilliseconds();
         if(ms > 0){
-            sleep((1000-ms)).then(res => {updateTime();});          
+            setTimeout(function(){
+                updateTime();
+                setInterval(updateTime,1000);
+            },(1000-ms))         
+        }else{
+            setInterval(updateTime,1000);
         }
-        setInterval(updateTime,1000);
+
+        
 
         function updateTime(){
             let date = new Date();
