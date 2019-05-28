@@ -32,6 +32,11 @@
             background-image: url(./earth.jpg);
             filter: drop-shadow(0px 0px 8px #FED577);
         }
+        
+        .hand{
+            transition: all 0.05s;
+            transition-timing-function: cubic-bezier(0.1, 2.0, 0.5, 1);
+        }
 
         #hour{
             height: 8px;
@@ -91,9 +96,9 @@
     <div class="wrap">
         <div id="digit"></div>
         <div id="clock">
-            <div id="hour"></div>
-            <div id="minute"></div>
-            <div id="second"></div>
+            <div class="hand" id="hour"></div>
+            <div class="hand" id="minute"></div>
+            <div class="hand" id="second"></div>
             <div id="center"></div>
         </div>
         
